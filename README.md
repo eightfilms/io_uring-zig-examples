@@ -2,7 +2,7 @@
 
 **Disclaimer: This is a work in progress**
 
-Learning io_uring by porting over the [examples found in liburing](https://github.com/axboe/liburing), except in Zig!
+Learning [io_uring](https://unixism.net/loti/what_is_io_uring.html) by porting over the [examples found in liburing](https://github.com/axboe/liburing), except in Zig!
 
 - [x] io_uring-close.test
 - [ ] io_uring-cp

@@ -35,7 +35,7 @@ fn copy_file(ring: *IO_Uring, infile: File, outfile: File) !void {
         var buf = try allocator.alloc(u8, insize);
         defer allocator.free(buf);
         read_loop: while (insize > 0) {
-            var this_size = std.math.max(insize, BUFFER_SIZE);
+            var this_size = if (BUFFER_SIZE > insize) insize else BUFFER_SIZE;
 
             if (reads + writes >= QUEUE_DEPTH or
                 this_size < 0)

@@ -8,7 +8,7 @@ Learning io_uring by porting over the [examples found in liburing](https://githu
 
 There are [plenty](https://unixism.net/loti/what_is_io_uring.html), [plenty](https://blogs.oracle.com/linux/post/an-introduction-to-the-io-uring-asynchronous-io-framework) of [resources](https://www.youtube.com/watch?v=EAlHd6-7P0w) talking about io_uring and its benefits in technical detail and they all probably do a better job than I will, so I'll give the TL;DR:
 
-> io_uring makes processing async I/O go brrrr by batching reads/writes and therefore keeping syscalls to a minimum.
+> io_uring makes processing async I/O go brrrr by keeping syscalls to a minimum. This is done through batching reads/writes through ring buffers that are setup between the user space and the kernel space.
 
 ## Implementations
 
@@ -16,7 +16,7 @@ There are [plenty](https://unixism.net/loti/what_is_io_uring.html), [plenty](htt
 - [ ] ~io_uring-test~ (not porting this - same as above except without file descriptor registration)
 - [x] io_uring-cp
 - [ ] io_uring-udp
-- [ ] link-cp
+- [x] link-cp
 - [ ] poll-bench
 - [ ] send-zerocopy
 - [ ] ucontext-cp

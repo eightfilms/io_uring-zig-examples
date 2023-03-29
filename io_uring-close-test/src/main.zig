@@ -30,8 +30,7 @@ pub fn main() !void {
     defer ring.deinit();
 
     const file = try fs.openFileAbsolute(file_path, .{});
-    const metadata = try file.metadata();
-    var size = metadata.size();
+    var size = (try file.stat()).size;
     defer file.close();
 
     var fds = [_]os.fd_t{0} ** 1;
